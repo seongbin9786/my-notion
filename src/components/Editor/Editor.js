@@ -1,6 +1,7 @@
 import { Component, jsx } from "@seongbin9786/my-renderer";
 
 import { goToDocument } from "../../goToDocument.js";
+import { debounceFunction } from "./debounceFunction.js";
 import { closeDropdownOnDeleteSlash, openDropdownOnSlash } from "./eventHandlers/attachDropdown.js";
 import { checkSelectionAndDisplayPopup } from "./eventHandlers/attachPopup.js";
 import { handleFormatShorcut } from "./eventHandlers/formatShortcut.js";
@@ -15,6 +16,12 @@ import { handleEditorUndo } from "./eventHandlers/undo.js";
 const TITLE_PLACEHOLDER = "제목 없음";
 
 export class Editor extends Component {
+    constructor(props) {
+        super(props);
+
+        this.handleAutoSave = debounceFunction(this.handleAutoSave.bind(this), 1000);
+    }
+
     // 제목 변경 시 탭 제목 갱신
     handleTitleChange(e) {
         const title = e.target.value;
@@ -47,7 +54,6 @@ export class Editor extends Component {
         goToDocument(pageId);
     }
 
-    // TODO: debounce 넣기
     async handleAutoSave() {
         const titleText = document.getElementsByClassName("editor__title").item(0).value;
         const contentHTML = document

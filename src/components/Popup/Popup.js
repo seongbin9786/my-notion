@@ -20,41 +20,41 @@ export class Popup extends Component {
     render() {
         return jsx`
         <div 
-            className=editor__popup
+            className="editor__popup"
             style=${{ display: "none" }}
         >
             <button 
-                className=editor__popup_item 
+                className="editor__popup_item" 
                 onclick=${handlePopUpFormatHeading}
             >
                 제목 1
             </button>
             <button 
-                className=editor__popup_item 
+                className="editor__popup_item" 
                 onclick=${handlePopUpAttachLink}
             >
                 링크
             </button>
             <button 
-                className=editor__popup_item 
+                className="editor__popup_item" 
                 onclick=${handlePopUpFormatBold}
             >
                 <strong>B</strong>
             </button>
             <button 
-                className=editor__popup_item 
+                className="editor__popup_item" 
                 onclick=${handlePopUpFormatItalic}
             >
                 <em>i</em>
             </button>
             <button 
-                className=editor__popup_item 
+                className="editor__popup_item" 
                 onclick=${handlePopUpFormatUnderline}
             >
                 <u>U</u>
             </button>
             <button 
-                className=editor__popup_item 
+                className="editor__popup_item" 
                 onclick=${handlePopUpFormatCode}>
                 ${"<>"}
             </button>

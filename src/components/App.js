@@ -1,5 +1,7 @@
 import { Component, jsx } from "@seongbin9786/my-renderer";
 
+import { Layout } from "./Layout.js";
+
 export class App extends Component {
     state = {
         nextId: this.parseDocumentIdFromUrl(),
@@ -58,7 +60,7 @@ export class App extends Component {
         }
 
         return jsx`
-            <Layout
+            <${Layout}
                 rootDocumentList=${rootDocumentList}
                 currentDocument=${currentDocument}
             />

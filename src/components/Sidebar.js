@@ -10,9 +10,9 @@ export class DocumentListItem extends Component {
         const { id, title, documents } = this.props;
 
         return jsx`
-            <div className=document_list_item>
+            <div className="document_list_item">
                 <div 
-                    className=document_list_item__title
+                    className="document_list_item__title"
                     data-item-id=${id}
                     onclick=${() => goToDocument(id)}
                 >
@@ -21,7 +21,7 @@ export class DocumentListItem extends Component {
                 ${
                     documents.length === 0
                         ? null
-                        : documents.map((doc) => jsx`<DocumentListItem ${doc} />`)
+                        : documents.map((doc) => jsx`<${DocumentListItem} ${doc} />`)
                 }
             </div>
         `;
@@ -51,14 +51,14 @@ export class Sidebar extends Component {
         const { rootDocumentList } = this.props;
 
         return jsx`
-            <nav className=sidebar>
-                <header className=sidebar--header>
-                    <span className=sidebar--header--username>${username}</span>
-                    <span className=sidebar--header--email>${userEmail}</span>
+            <nav className="sidebar">
+                <header className="sidebar--header">
+                    <span className="sidebar--header--username">${username}</span>
+                    <span className="sidebar--header--email">${userEmail}</span>
                 </header>
-                <div className=sidebar--tree--title>개인 페이지</div>
+                <div className="sidebar--tree--title">개인 페이지</div>
                 <div>
-                    ${rootDocumentList.map((doc) => jsx`<DocumentListItem ${doc} />`)}
+                    ${rootDocumentList.map((doc) => jsx`<${DocumentListItem} ${doc} />`)}
                 </div>
             </nav>
         `;

@@ -1,6 +1,8 @@
 import { Component, jsx } from "@seongbin9786/my-renderer";
 
 import { goToDocument } from "../../goToDocument.js";
+import { Dropdown } from "../Dropdown/Dropdown.js";
+import { Popup } from "../Popup/Popup.js";
 import { debounceFunction } from "./debounceFunction.js";
 import { closeDropdownOnDeleteSlash, openDropdownOnSlash } from "./eventHandlers/attachDropdown.js";
 import { checkSelectionAndDisplayPopup } from "./eventHandlers/attachPopup.js";
@@ -105,7 +107,7 @@ export class Editor extends Component {
 
         return jsx`
             <main 
-                className=editor
+                className="editor"
                 onkeydown=${this.handleKeyDown.bind(this)}
                 onkeyup=${this.handleKeyUp.bind(this)}
                 onmouseup=${this.handleMouseUp.bind(this)}
@@ -113,20 +115,20 @@ export class Editor extends Component {
                 onpaste=${handleSafeHTMLPaste}
             >
                 <input 
-                    className=editor__title
-                    contentEditable=true
+                    className="editor__title"
+                    contentEditable="true"
                     placeholder=${TITLE_PLACEHOLDER}
                     oninput=${this.handleTitleChange.bind(this)}
                     value=${title}
                 />
                 <div
-                    className=editor__content_root
-                    contentEditable=true
-                    tabIndex=0
+                    className="editor__content_root"
+                    contentEditable="true"
+                    tabIndex="0"
                     dangerouslySetInnerHTML=${contentHTML}
                 />
-                <Popup />
-                <Dropdown documentId=${id} />
+                <${Popup} />
+                <${Dropdown} documentId=${id} />
             </main>
         `;
     }

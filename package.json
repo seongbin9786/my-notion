@@ -27,6 +27,6 @@
         "prettier": "^3.0.3"
     },
     "dependencies": {
-        "@seongbin9786/my-renderer": "0.0.23"
+        "@seongbin9786/my-renderer": "0.0.26"
     }
 }

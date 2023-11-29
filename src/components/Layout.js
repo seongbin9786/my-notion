@@ -1,5 +1,9 @@
 import { Component, jsx } from "@seongbin9786/my-renderer";
 
+import { Editor } from "./Editor/Editor.js";
+import { Header } from "./Header.js";
+import { Sidebar } from "./Sidebar.js";
+
 // TODO: 문서 탐색 시 breadcrumb 갱신하기
 // TODO: 아 문서 탐색은 좀 걸리겠는데?
 
@@ -11,10 +15,10 @@ export class Layout extends Component {
         const { rootDocumentList, currentDocument } = this.props;
 
         return jsx`
-            <div id=notion-app>
-                <Sidebar rootDocumentList=${rootDocumentList} />
-                <Header />
-                <Editor currentDocument=${currentDocument} />
+            <div id="notion-app">
+                <${Sidebar} rootDocumentList=${rootDocumentList} />
+                <${Header} />
+                <${Editor} currentDocument=${currentDocument} />
             </div>
         `;
     }

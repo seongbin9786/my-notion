@@ -18,24 +18,24 @@ export class Dropdown extends Component {
         // $dropdown.style.display = "none";
         return jsx`
             <div 
-                className=editor__dropdown
+                className="editor__dropdown"
                 style=${{ display: "none" }}
             >
-                <div className=editor__dropdown__header>기본 블록</div>
-                <div className=editor__dropdown__list autoFocus=true>
+                <div className="editor__dropdown__header">기본 블록</div>
+                <div className="editor__dropdown__list" autoFocus="true">
                     ${createDropdownItems(documentId).map(
                         ({ imageUrl, name, description, handler }) => jsx`
                         <div 
-                            className=editor__dropdown__item
+                            className="editor__dropdown__item"
                             onclick=${handler}
                         >
                             <img 
-                                className=editor__dropdown__item_thumbnail 
+                                className="editor__dropdown__item_thumbnail" 
                                 src=${imageUrl}
                             />
-                            <div className=editor__dropdown__item_textbox>
-                                <div className=editor__dropdown__item_title>${name}</div>
-                                <div className=editor__dropdown__item_description>${description}</div>
+                            <div className="editor__dropdown__item_textbox">
+                                <div className="editor__dropdown__item_title">${name}</div>
+                                <div className="editor__dropdown__item_description">${description}</div>
                             </div>
                         </div>`,
                     )}

@@ -1,4 +1,4 @@
-# SPA Notion Cloning
+# React로 노션 구현하기
 
 SPA인 Notion의 동작을 흉내냈습니다.
 
